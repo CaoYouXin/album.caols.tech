@@ -43,3 +43,18 @@ const minDiffReal = (nums) => {
   }
   return null;
 }
+
+const progress = (percent) => {
+  const lis = document.querySelectorAll('ul.membership li');
+  let first = true;
+  for (let i = 0; i < lis.length; i++) {
+    let li = lis[i];
+    if (first && (i + 1) / lis.length > percent) {
+      console.log(li.innerText);
+      first = false;
+    }
+    if (li.classList.contains('here')) {
+      console.log(((i + 1) / lis.length * 100).toFixed(2));
+    }
+  }
+}
